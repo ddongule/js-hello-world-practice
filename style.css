@@ -72,6 +72,11 @@ body {
   padding-left: 10px;
 }
 
+.content .again {
+  display: none;
+  line-height: 3;
+}
+
 .content button {
   display: none;
 }

@@ -17,13 +17,31 @@
       </nav>
       <section class="content">
         <div> > 아래에 <span class='emphasis'>Hello World!</span>를 입력해주세요. </div>
-        <form class='hello-world-form' onSubmit="count();">
+        <form class='hello-world-form'>
           > 
           <input type="text" placeholder="Hello World!" autofocus />
           <button type="submit" class='count-button'>count</button>
         </form>
-        <div class="count"> > 총 <span class='emphasis' id='count'>0</span>번 입력되었습니다.</div>
+        <div class="count-container"> > 총 <span class='emphasis' id='count'>0</span>번 입력되었습니다.</div>
+        <div class='again'> > 다시 입력해주세요! </div>
       </section>
     </main>
+    <script> 
+      
+      const form = document.querySelector('.hello-world-form');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        if (e.target[0].value === 'Hello World!') {
+          document.querySelector('.again').style.display = 'none';
+          count();
+        } else {
+          document.querySelector('.again').style.display = 'block';
+        }
+      });
+
+    </script>
+    <script src='./index.js'></script>
   </body>
 </html>
